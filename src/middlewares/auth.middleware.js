@@ -1,6 +1,6 @@
 import { asyncHandeler } from "../utils/asynncHandeler.js";
 import { ApiError } from "../utils/ApiError.js";
-import { jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { User } from "../models/user.model.js";
 
 // in (req, _, next) , _(underscore) is used as res because it is not in use 
