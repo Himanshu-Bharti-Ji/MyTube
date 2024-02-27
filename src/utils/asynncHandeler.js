@@ -23,6 +23,6 @@ export { asyncHandeler }
 //         res.status(err.code || 5000).json({
 //             success: false,
 //             message: err.message
-//         })    
+//         })
 //     }
 // }

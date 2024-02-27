@@ -243,12 +243,12 @@ const changeCurrentPassword = asyncHandeler(async (req, res) => {
     await user.save({ validateBeforeSave: false })
 
     return req.status(200)
-        .json(new ApiResponse(200, "Password changed successfully"))
+        .json(new ApiResponse(200, {}, "Password changed successfully"))
 })
 
 const getCurrentUser = asyncHandeler(async (req, res) => {
-    return req.status(200)
-        .json(200, "Current user fetched successflly")
+    return res.status(200)
+        .json(new ApiResponse(200, req.user, "User Fetched successfully"))
 })
 
 const updateAccountDetails = asyncHandeler(async (req, res) => {
@@ -270,7 +270,7 @@ const updateAccountDetails = asyncHandeler(async (req, res) => {
     ).select("-password")
 
     return res.status(200)
-        .json(200, new ApiResponse(200, user, "Account details update successfully"))
+        .json(new ApiResponse(200, user, "Account details update successfully"))
 
 })
 
@@ -298,7 +298,7 @@ const updateUserAvatar = asyncHandeler(async (req, res) => {
     ).select("-password")
 
     return res.status(200)
-        .json(200, new ApiResponse(200, user, "Avatar update successfully"))
+        .json(new ApiResponse(200, user, "Avatar update successfully"))
 })
 
 const updateUserCoverImage = asyncHandeler(async (req, res) => {
@@ -325,7 +325,7 @@ const updateUserCoverImage = asyncHandeler(async (req, res) => {
     ).select("-password")
 
     return res.status(200)
-        .json(200, new ApiResponse(200, user, "Cover Image update successfully"))
+        .json(new ApiResponse(200, user, "Cover Image update successfully"))
 
 })
 
