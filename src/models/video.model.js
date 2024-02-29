@@ -39,7 +39,7 @@ const videoSchema = new Schema(
     }, { timestamps: true });
 
 
-videoSchema.plugin(mongooseAggregatePaginate)
+videoSchema.plugin(mongooseAggregatePaginate)   // kaha se kaha tak videos dene hai ek page mein
 
 
 export const Video = mongoose.model("Video", videoSchema);
